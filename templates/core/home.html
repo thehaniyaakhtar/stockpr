@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Hero Collage</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: rgba(33,34,34,255);
+      color: white;
+    }
+
+    .header-image{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 235px;
+      height: auto;
+      z-index: 10;
+    }
+
+    .hero-collage {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      margin-top: -78px;
+    }
+
+    .hero-collage img {
+      width: calc(100% / 6); /* Default: 6 images in a row */
+      height: 80vh;
+      object-fit: cover; /* Ensures images fill the container nicely */
+    }
+
+    /* Gain Please Image */
+    .gain-please {
+      display: block; /* Ensure the image is a block element */
+      margin: 20px auto; /* Center the image with margin */
+      height: 200px; /* Set the desired height to match header.png */
+      width: 600px; /* Maintain aspect ratio */
+      margin-left: 300px; /* Move it slightly to the left */
+    }
+
+    /* Button Options Section */
+    .button-options {
+      position: absolute;
+      top: 45px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .login-button {
+      color: rgb(35, 35, 32); /* Text color */
+      border: none; /* Remove default button border */
+      border-radius: 15px; /* Rounded corners */
+      padding: 10px 20px; /* Padding for the button */
+      font-size: 16px; /* Font size */
+      cursor: pointer; /* Pointer cursor on hover */
+      transition: transform 0.2s; /* Animation for hover effect */
+      width: 290px;
+      height: 50px;
+    }
+
+    /* Individual Button Colors */
+    .yellow {
+      background-color: rgb(255, 189, 89); /* Yellow background */
+    }
+
+    .green {
+      background-color: rgb(255, 189, 89); /* Green background */
+    }
+
+    .red {
+      background-color: rgb(255, 189, 89); /* Red background */
+    }
+
+    .login-button:hover {
+      transform: scale(1.05); /* Slightly scale up on hover */
+    }
+
+    /* Hero Text */
+    .hero-text {
+      position: absolute;
+      top: 110%;
+      left: 40%;
+      transform: translate(-50%, -50%);
+      font-family: 'Rye', Tuscan;
+      font-size: 8vw;
+      color: rgb(255, 189, 89);
+      z-index: 20;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    } 
+
+    .about-us {
+      text-align: center;
+      padding: 10px;
+      background-color: #222;
+      color: #fff;
+      font-family: 'Times New Roman', Times, serif; /* Set Times New Roman */
+    }
+
+    .about-us-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px; /* Space between text and image */
+      max-width: 120px;
+      width: 20%;
+    }
+    
+    .about-us h2 {
+      font-size: 4vw; /* Make heading bigger */
+      margin-bottom: 10px;
+    }
+    
+    .about-us p {
+      font-size: 1rem; /* Increase paragraph font size */
+      line-height: 2;
+      max-width: 499px;
+      margin: 0 auto;
+    }
+
+    .about-us-image {
+      margin-top: -150px; /* Move the image slightly above */
+    }
+    
+    /* Decreased image size */
+    .about-us-image img {
+      width: 300px; /* Set smaller image size */
+
+    }  
+    .container-fluid h1 {
+        font-size: 3vw; /* Match the font size with other headings */
+        margin-top: 20px; /* Add more space above */
+        margin-bottom: 20px; /* Add more space below */
+        text-align: left;
+        font-family: 'Times New Roman', serif; /* Ensure it matches other heading fonts */
+      }
+      
+    
+
+    footer {
+      background-color: #111;
+      padding: 40px;
+      text-align: center;
+      color: #fff;
+    }
+
+    footer h3 {
+      font-family: 'Times New Roman', serif;
+      font-size: 2vw;
+    }
+
+    footer p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    footer a {
+      color: #ffd45f;
+      text-decoration: none;
+    }
+
+    footer .social-icons a {
+      margin: 0 10px;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <!-- Gain Please Image -->
+  <img src="/static/images/gain please.jpg" alt="Gain Please" class="gain-please">
+
+  <div class = "button-options">
+    <button class = "login-button yellow">Login as a Broker</button>
+    <button class = "login-button green">Login as a User</button>
+    <button class = "login-button red">Register</button>
+  </div>
+
+  <img src= "/static//images/header.png" alt="Header" class = "header-image">
+
+  <!-- TradingView Widget START -->
+  <section class="hero-sec">
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <div class="tradingview-widget-copyright">
+        <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"></a>
+      </div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+      {
+        "symbols": [
+          {"description": "TESLA", "proName": "NASDAQ:TSLA"},
+          {"description": "NVIDIA", "proName": "NASDAQ:NVDA"},
+          {"description": "APPLE", "proName": "NASDAQ:AAPL"},
+          {"description": "MICROSOFT", "proName": "NASDAQ:MSFT"},
+          {"description": "AMAZON", "proName": "NASDAQ:AMZN"},
+          {"description": "META", "proName": "NASDAQ:META"},
+          {"description": "NETFLIX", "proName": "NASDAQ:NFLX"},
+          {"description": "GOOGLE", "proName": "NASDAQ:GOOGL"},
+          {"description": "INTEL", "proName": "NASDAQ:INTC"},
+          {"description": "AIRBNB", "proName": "NASDAQ:ABNB"},
+          {"description": "ADOBE", "proName": "NASDAQ:ADBE"},
+          {"description": "UBER", "proName": "NYSE:UBER"},
+          {"description": "WALMART", "proName": "NYSE:WMT"},
+          {"description": "NIKE", "proName": "NYSE:NKE"},
+          {"description": "BOEING", "proName": "NYSE:BA"},
+          {"description": "MONGODB", "proName": "NASDAQ:MDB"},
+          {"description": "MCDONALD'S", "proName": "NYSE:MCD"}
+        ],
+        "showSymbolLogo": true,
+        "isTransparent": false,
+        "displayMode": "regular",
+        "colorTheme": "dark",
+        "locale": "en"
+      }
+      </script>
+    </div>
+  </section>
+  <!-- TradingView Widget END -->
+
+  <!-- Hero Text -->
+  <div class="hero-text">
+    Dalal  Street Talkies
+  </div>
+
+  <div class="hero-collage">
+    <img src="/static/images/1.jpg" alt="Image 1">
+    <img src="/static/images/2.jpg" alt="Image 2">
+    <img src="/static/images/3.jpg" alt="Image 3">
+    <img src="/static/images/4.jpg" alt="Image 4">
+    <img src="/static/images/5.jpg" alt="Image 5">
+    <img src="/static/images/6.jpg" alt="Image 6">
+  </div>
+
+  <div class="about-us">
+    <h2>Why Dalal Street Talkies?</h2>
+    <p>At Dalal Street Talkies, we’re reinventing stock market predictions with a fresh, user-friendly approach. Our platform is designed with the younger 
+    generation in mind, offering insights and trends that simplify the complexities of the stock market. We break down financial jargon, using clear 
+    visuals and easy-to-understand tools to help you make informed decisions without feeling overwhelmed. </p>
+
+    <p>Whether you're just starting out or looking to refine your stock strategy, Dalal Street Talkies combines cutting-edge algorithms with a friendly 
+      interface, making stock prediction accessible to everyone. We believe that investing shouldn't be intimidating—so we’ve made it simple, engaging, 
+      and tailored for the modern, tech-savvy user.</p>
+    
+    <p>Join us, and let's bring a more relaxed, confident approach to the stock market!</p>
+  </div>
+  </div>
+    <!-- Image Beside the Text -->
+    <div class="about-us-image">
+      <img src="/static/images/side.png" alt="Side Image">
+    </div>
+  </div>
+  <!-- TradingView Widget BEGIN -->
+    
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js" async>
+    {
+    "feedMode": "market",
+    "market": "stock",
+    "isTransparent": false,
+    "displayMode": "compact",
+    "width": "100%",
+    "height": "420",
+    "colorTheme": "dark",
+    "locale": "en"
+  }
+    </script></a></div>
+  </div>
+  <!-- TradingView Widget END -->
+    
+<div class="container-fluid">
+        <h1>Top Stocks</h1>
+      </div>
+    <!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container1 {% if not user.is_authenticated %}blurred{% endif %}">
+      <div class="tradingview-widget-container__widget"></div>
+      <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow"
+          target="_blank">
+          <script type="text/javascript"
+            src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
+              {
+                "symbols": [
+                  [
+                    "Apple",
+                    "AAPL|1D"
+                  ],
+                  [
+                    "Google",
+                    "GOOGL|1D"
+                  ],
+                  [
+                    "Microsoft",
+                    "MSFT|1D"
+                  ],
+                  [
+                    "Tesla",
+                    "NASDAQ:TSLA|1D"
+                  ],
+                  [
+                    "Amazon",
+                    "NASDAQ:AMZN|1D"
+                  ],
+                  [
+                    "Meta",
+                    "NASDAQ:META|1D"
+                  ],
+                  [
+                    "Adobe",
+                    "NASDAQ:ADBE|1D"
+                  ],
+                  [
+                    "Intel",
+                    "NASDAQ:INTC|1D"
+                  ],
+                  [
+                    "NVIDIA",
+                    "NASDAQ:NVDA|1D"
+                  ],
+                  [
+                    "NIKE",
+                    "NYSE:NKE|1D"
+                  ]
+                ],
+                  "chartOnly": false,
+                    "width": "100%",
+                      "height": "550",
+                        "locale": "en",
+                          "colorTheme": "dark",
+                            "autosize": false,
+                              "showVolume": false,
+                                "showMA": false,
+                                  "hideDateRanges": false,
+                                    "hideMarketStatus": false,
+                                      "hideSymbolLogo": false,
+                                        "scalePosition": "right",
+                                          "scaleMode": "Normal",
+                                            "fontFamily": "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
+                                              "fontSize": "10",
+                                                "noTimeScale": false,
+                                                  "valuesTracking": "1",
+                                                    "changeMode": "price-and-percent",
+                                                      "chartType": "area",
+                                                        "maLineColor": "#2962FF",
+                                                          "maLineWidth": 1,
+                                                            "maLength": 9,
+                                                              "lineWidth": 2,
+                                                                "lineType": 0,
+                                                                  "dateRanges": [
+                                                                    "1d|1",
+                                                                    "1m|30",
+                                                                    "3m|60",
+                                                                    "12m|1D",
+                                                                    "60m|1W",
+                                                                    "all|1M"
+                                                                  ]
+              }
+            </script>
+        </a></div>
+    </div>
+    <!-- TradingView Widget END -->
+
+    
+    <footer>
+      <h3>Contact Us</h3>
+      <p>Email: <a href="mailto:support@dalalstreettalkies.com">support@dalalstreettalkies.com</a></p>
+      <p>Phone: +1 (123) 456-7890</p>
+      <p>Address: Dalal Street Talkies, 123 Market Gulli, Mumbai, Maharashtra, India</p>
+  
+      <div class="social-icons">
+        <a href="https://instagram.com/dalalstreettalkies" target="_blank">Instagram</a> | 
+        <a href="https://twitter.com/dalal_street_app" target="_blank">Twitter</a> | 
+        <a href="https://linkedin.com/dalalstreettalkies" target="_blank">LinkedIn</a>
+      </div>
+    </footer>
+  
+  </body>
+  
+  </html>
