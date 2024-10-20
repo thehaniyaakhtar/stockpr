@@ -1,0 +1,14 @@
+django
+streamlit
+pandas
+yfinance
+matplotlib
+numpy
+tensorflow
+scikit-learn
+ta
+newsapi-python
+nltk
+plotly
+keras 
+h5py
